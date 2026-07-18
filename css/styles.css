@@ -33,6 +33,10 @@
 .sohc .center{text-align:center}
 .sohc .rule{width:64px; height:3px; background:var(--terra); border:0; margin:20px auto 26px}
 .sohc img{max-width:100%; height:auto; display:block}
+/* Grid children default to min-width:auto, which lets wide content push a
+   track past the screen edge. Zeroing it keeps every grid inside the phone. */
+.sohc .hero-split>*,.sohc .split>*,.sohc .tiers>*,.sohc .gallery>*,
+.sohc .quotes>*,.sohc .times>*{min-width:0}
 
 /* Buttons */
 .sohc .btn{display:inline-block; font-family:'Jost',sans-serif; font-weight:700;
@@ -70,7 +74,7 @@
 .sohc .hero-copy .cta-row{justify-content:flex-start; margin-top:26px}
 
 /* Portrait — grounds the cut-out photo on a warm color wash, colored halo + floor shadow */
-.sohc .portrait{position:relative; max-width:560px; margin:0 auto; padding:34px 30px 26px;
+.sohc .portrait{position:relative; max-width:min(560px,100%); margin:0 auto; padding:34px 30px 26px;
   border-radius:26px;
   background:linear-gradient(160deg,#e9f5f4 0%,#f6ede3 55%,#f3e4d6 100%);
   box-shadow:0 22px 52px rgba(61,122,124,.18)}
@@ -84,7 +88,7 @@
   background:radial-gradient(ellipse at center, rgba(61,122,124,.28), rgba(61,122,124,0) 70%);
   filter:blur(3px); z-index:0}
 .sohc .portrait picture{position:relative; z-index:1; display:block}
-.sohc .portrait .directors{position:relative; z-index:1; max-width:470px; margin:0 auto; display:block}
+.sohc .portrait .directors{position:relative; z-index:1; max-width:min(470px,100%); margin:0 auto; display:block}
 .sohc .hero .caption{font-family:'Cormorant Garamond',serif; font-size:1.25rem;
   color:var(--soft); letter-spacing:.04em}
 .sohc .details{font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,3vw,1.9rem);
@@ -143,11 +147,11 @@
 .sohc .gcard{text-align:center}
 .sohc .gcard img{border-radius:12px; margin-bottom:12px; box-shadow:0 8px 22px rgba(0,0,0,.08)}
 .sohc .gcard .gcap{font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--teal-dark)}
-.sohc .soar-hero{max-width:620px; margin:0 auto 30px; border-radius:12px}
+.sohc .soar-hero{max-width:min(620px,100%); margin:0 auto 30px; border-radius:12px}
 
 /* Split (ebook) */
 .sohc .split{display:grid; grid-template-columns:1fr 1.2fr; gap:44px; align-items:center}
-.sohc .split img{border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.1); max-width:360px; margin:0 auto}
+.sohc .split img{border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.1); max-width:min(360px,100%); margin:0 auto}
 
 /* Testimonials */
 .sohc .quotes{display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:38px}
