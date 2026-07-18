@@ -26,6 +26,31 @@ Old links keep working because the old GHL page becomes a redirect.
 
 ---
 
+## How the pieces map: one page = one of everything
+
+Keep the same name at every layer. One name, four places.
+
+| Layer | Guest (done) | Join (next) |
+| --- | --- | --- |
+| Desktop folder | `collective-guest-page` | `collective-join-page` |
+| GitHub repo | `collective-guest-page` | `collective-join-page` |
+| Vercel project | `collective-guest-page` | `collective-join-page` |
+| Live domain | guest.wcsoulcare.com | join.wcsoulcare.com |
+
+Each page stays isolated, so breaking one can't affect another.
+
+- **Repo** = backup + undo history
+- **Vercel project** = the thing that publishes
+- **Domain** = where people find it
+
+**Later, once nothing is left in GoHighLevel on `collective.wcsoulcare.com`:**
+combine the pages into one repo / one Vercel project and point
+`collective.wcsoulcare.com` at it. Then `/guest` and `/join` work as real
+paths again — original URLs, no subdomains, no redirects. Building page by
+page now doesn't block that; consolidating is mostly moving folders together.
+
+---
+
 ## Step 1 — Get the real page source
 
 GoHighLevel does **not** serve your custom code as plain HTML. It hides it
